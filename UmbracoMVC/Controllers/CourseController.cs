@@ -52,10 +52,10 @@ namespace UmbracoMVC.Controllers
             int totalItem = courseModels.Count;
             int totalPage = totalItem % pageSize == 0 ? totalItem / pageSize : totalItem / pageSize + 1;
             PagingModel rt = new PagingModel();
-                rt.Page = page;
-                rt.PageSize = pageSize;
-                rt.TotalPage = totalPage;
-                rt.Data = courseModels.Skip((page-1) * pageSize).Take(pageSize).ToList();
+            rt.Page = page;
+            rt.PageSize = pageSize;
+            rt.TotalPage = totalPage;
+            rt.Data = courseModels.Skip((page - 1) * pageSize).Take(pageSize).ToList();
             //var objTemp = new { page = page, pageSize = pageSize, totalPage = totalPage, data = courseModels.Skip(page * pageSize).Take(pageSize) };
             return PartialView("List", rt);
         }

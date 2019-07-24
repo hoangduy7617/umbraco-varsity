@@ -13,7 +13,6 @@ using System.IO;
 using System.Web.Routing;
 using System.Web;
 using Umbraco.Web.Mvc;
-
 namespace UmbracoMVC.Api
 {
     public class ContactApiController : UmbracoApiController

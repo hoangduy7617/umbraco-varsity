@@ -114,19 +114,21 @@
       <HintPath>..\Umbraco\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="Umbraco.Core">
-      <HintPath>..\..\..\..\..\Source\Ex\Umbraco\bin\Umbraco.Core.dll</HintPath>
+    <Reference Include="Umbraco.Core, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Umbraco\bin\Umbraco.Core.dll</HintPath>
     </Reference>
     <Reference Include="Umbraco.Web, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Umbraco\Bin\Umbraco.Web.dll</HintPath>
+      <HintPath>..\Umbraco\bin\Umbraco.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Umbraco.Web.UI">
-      <HintPath>..\..\..\..\..\Source\Ex\Umbraco\bin\Umbraco.Web.UI.dll</HintPath>
+    <Reference Include="Umbraco.Web.UI, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Umbraco\bin\Umbraco.Web.UI.dll</HintPath>
     </Reference>
     <Reference Include="UmbracoMVC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Umbraco\bin\UmbracoMVC.dll</HintPath>
+      <HintPath>..\Umbraco\bin\UmbracoMVC.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
