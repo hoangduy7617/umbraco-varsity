@@ -1,0 +1,88 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "/Views/pageMaster.cshtml";
+}
+
+
+
+@{
+    dynamic selection;
+    if (!string.IsNullOrEmpty(Request.QueryString["category"])) {
+       selection = Umbraco.TagQuery.GetContentByTag(HttpContext.Current.Request.QueryString["category"]);
+    }
+    else{
+	    selection = Umbraco.Content(Guid.Parse("a4d9628e-6ee3-46ac-aebf-550d8b6c0687"))
+    .ChildrenOfType("course")
+    .Where(x => x.IsVisible());
+    }
+    
+    var allCategory = Umbraco.TagQuery.GetAllTags("CourseCategory");
+}
+
+@Html.Partial("/Views/Partials/Varsity/_Breadcrumb.cshtml")
+
+<section id="mu-course-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mu-course-content-area">
+                    <div class="row">
+                        <div class="col-md-9" id="mainContent">
+                            @Html.Action("List", "Course")
+                            <!-- start course content container -->
+                   
+                        </div>
+                        <div class="col-md-3">
+                            <!-- start sidebar -->
+                            <aside class="mu-sidebar">
+                                <!-- start single sidebar -->
+                                <div class="mu-single-sidebar">
+                                    <h3>Categories</h3>
+                                    <ul class="mu-sidebar-catg">
+                                        <li><a href="/course-listing">All</a></li>
+                                        @foreach(var item2 in allCategory){
+                                        <li><a href="/course-listing?category=@item2.Text">@item2.Text</a></li>
+                                        }
+                                    </ul>
+                                </div>
+                                <!-- end single sidebar -->
+                                <!-- start single sidebar -->
+                                <div class="mu-single-sidebar">
+                                    <h3>Archives</h3>
+                                    <ul class="mu-sidebar-catg mu-sidebar-archives">
+                                        <li><a href="#">May <span>(25)</span></a></li>
+                                        <li><a href="">June <span>(35)</span></a></li>
+                                        <li><a href="">July <span>(20)</span></a></li>
+                                        <li><a href="">August <span>(125)</span></a></li>
+                                        <li><a href="">September <span>(45)</span></a></li>
+                                        <li><a href="">October <span>(85)</span></a></li>
+                                    </ul>
+                                </div>
+                                <!-- end single sidebar -->
+                                <!-- start single sidebar -->
+                                <div class="mu-single-sidebar">
+                                    <h3>Tags Cloud</h3>
+                                    <div class="tag-cloud">
+                                        <a href="#">Health</a>
+                                        <a href="#">Science</a>
+                                        <a href="#">Sports</a>
+                                        <a href="#">Mathematics</a>
+                                        <a href="#">Web Design</a>
+                                        <a href="#">Admission</a>
+                                        <a href="#">History</a>
+                                        <a href="#">Environment</a>
+                                    </div>
+                                </div>
+                                <!-- end single sidebar -->
+                            </aside>
+                            <!-- / end sidebar -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbracoMVC", "..\UmbracoMVC\UmbracoMVC.csproj", "{7A9AE5F9-3623-44EF-9DEB-D704503A1B63}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Umbraco(1)", ".", "{C5B06DDC-8558-4A32-AA32-A164D0CF5583}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_20678"
+		Debug.AspNetCompiler.PhysicalPath = "..\Umbraco\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_20678\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_20678"
+		Release.AspNetCompiler.PhysicalPath = "..\Umbraco\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_20678\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "20678"
+		SlnRelativePath = "..\Umbraco\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A9AE5F9-3623-44EF-9DEB-D704503A1B63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A9AE5F9-3623-44EF-9DEB-D704503A1B63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A9AE5F9-3623-44EF-9DEB-D704503A1B63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A9AE5F9-3623-44EF-9DEB-D704503A1B63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5B06DDC-8558-4A32-AA32-A164D0CF5583}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5B06DDC-8558-4A32-AA32-A164D0CF5583}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5B06DDC-8558-4A32-AA32-A164D0CF5583}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5B06DDC-8558-4A32-AA32-A164D0CF5583}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {29DB6C60-3377-46BA-AC6C-B33B7AE2A929}
+	EndGlobalSection
+EndGlobal

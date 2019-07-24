@@ -1,0 +1,26 @@
+﻿@model dynamic
+
+@foreach (var item in Model)
+{
+    <div class="col-md-6">
+        <div class="mu-latest-course-single">
+            <figure class="mu-latest-course-img">
+                <a href="@item.Url"><img alt="img" src="@item.Image"></a>
+                <figcaption class="mu-latest-course-imgcaption">
+                    <a href="#">Drawing</a>
+                    <span><i class="fa fa-clock-o"></i>@((int)item.Duration * 7)Days</span>
+                </figcaption>
+            </figure>
+            <div class="mu-latest-course-single-content">
+                <h4><a href="@item.Url">@item.Name</a></h4>
+                <p>@Html.Raw(item.ShortDescription)</p>
+                <div class="mu-latest-course-single-contbottom">
+                    <a href="@item.Url" class="mu-course-details">Details</a>
+                    <span href="#" class="mu-course-price">$@item.Price</span>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+

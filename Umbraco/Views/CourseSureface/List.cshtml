@@ -1,0 +1,84 @@
+﻿@model UmbracoMVC.Models.PagingModel
+@{
+    var z = Model;
+}
+<!-- start course content container -->
+<div class="mu-course-container">
+    <div class="row">
+        @foreach (var item in Model.Data)
+        {
+            <div class="col-md-6 col-sm-6">
+                <div class="mu-latest-course-single">
+                    <figure class="mu-latest-course-img">
+                        <a href="@item.Url"><img src="@item.Image" alt="img"></a>
+                        <figcaption class="mu-latest-course-imgcaption">
+                            <a href="/course-listing?category=@(((string[])(item.CourseCategory))[0])">@(((string[])(item.CourseCategory))[0])</a>
+                            <span><i class="fa fa-clock-o"></i>@((int)item.Duration * 7) Days</span>
+                        </figcaption>
+                    </figure>
+                    <div class="mu-latest-course-single-content">
+                        <h4><a href="@item.Url">@item.Name</a></h4>
+                        <p>@Html.Raw(item.ShortDescription)</p>
+                        <div class="mu-latest-course-single-contbottom">
+                            <a class="mu-course-details" href="@item.Url">Details</a>
+                            <span class="mu-course-price" href="#">$@item.Price</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+</div>
+<!-- end course content container -->
+<!-- start course pagination -->
+<div class="mu-pagination">
+    <nav>
+        <ul class="pagination">
+            @{
+                var prev = Model.Page - 1 >= 1 ? Model.Page - 1 : 1;
+                var next = Model.Page + 1 <= Model.TotalPage ? Model.Page + 1 : Model.TotalPage;
+            }
+            @if (Model.Page > 1)
+            {
+                <li>
+                    <a href="#" aria-label="Previous" onclick="LoadMainDataCourse(@prev)">
+                        <span class="fa fa-angle-left"></span> Prev
+                    </a>
+                </li>
+            }
+            @for (int i = 1; i <= Model.TotalPage; i++)
+            {
+                var classActive = i == Model.Page ? "active" : "";
+                <li class="@classActive"><a href="#" onclick="LoadMainDataCourse(@i)">@i</a></li>
+
+            }
+            @if (Model.Page < Model.TotalPage)
+            {
+                <li>
+                    <a href="#" aria-label="Next" onclick="LoadMainDataCourse(@next)">
+                        Next <span class="fa fa-angle-right"></span>
+                    </a>
+                </li>
+            }
+        </ul>
+    </nav>
+</div>
+<!-- end course pagination -->
+
+<script>
+    function LoadMainDataCourse(page) {
+        $.ajax({
+            url: '/Umbraco/Surface/Course/List?page=' + page,
+            type: 'GET',
+            success: function (data) {
+                //debugger
+                $('#mainContent').html(data);
+                console.log(data);
+            },
+            error: function (e) {
+
+            }
+        });
+    }
+</script>

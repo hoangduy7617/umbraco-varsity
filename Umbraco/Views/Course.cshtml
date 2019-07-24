@@ -1,0 +1,123 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Course>
+@using System.Linq;
+@using Umbraco.Web;
+@using Umbraco.Web.Models
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "/Views/pageMaster.cshtml";
+
+}
+
+<!-- Page breadcrumb -->
+@Html.Partial("/Views/Partials/Varsity/_Breadcrumb.cshtml")
+
+<!-- End breadcrumb -->
+
+<section id="mu-course-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mu-course-content-area">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- start course content container -->
+                            <div class="mu-course-container mu-course-details">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="mu-latest-course-single">
+                                            <figure class="mu-latest-course-img">
+                                                <a href="#"><img src="@Model.Value("Image")" alt="@Model.Value("Title")"></a>
+                                                <figcaption class="mu-latest-course-imgcaption">
+                                                    <a href="/course-listing?category=@Model.CourseCategory.FirstOrDefault()">@Model.CourseCategory.FirstOrDefault()</a>
+                                                    <span><i class="fa fa-clock-o"></i>@((int)Model.Value("Duration") * 7)Days</span>
+                                                </figcaption>
+                                            </figure>
+                                            <div class="mu-latest-course-single-content">
+                                                <h2><a href="@Model.Url">@Model.Value("Title")</a></h2>
+                                                <h4>Course Information</h4>
+                                                <ul>
+                                                    <li> <span>Course Price</span> <span>$@Model.Value("Price")</span></li>
+                                                    <li> <span>Place</span> <span>@Model.Value("Place")</span></li>
+                                                    <li> <span>Total Students</span> <span>@Model.Value("TotalStudents")</span></li>
+                                                    <li> <span>Course Duration</span> <span>@Model.Value("Duration") Weeks</span></li>
+                                                    <li> <span>Course Start</span> <span>@Model.Value("StartDate")</span></li>
+                                                </ul>
+                                                <h4>Description</h4>
+                                                @Html.Raw(Model.Value("Description"))
+                                                <h4>Course Outline</h4>
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th> Title </th>
+                                                                <th> Course Time </th>
+                                                                <th> Spent Time </th>
+                                                                <th> Status </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td> 1. Topic 1 </td>
+                                                                <td> 15:30 </td>
+                                                                <td> 13:80 </td>
+                                                                <td> Successful </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td> 2. Topic 2 </td>
+                                                                <td> 15:30 </td>
+                                                                <td> 13:80 </td>
+                                                                <td> Successful </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td> 3. Topic 3 </td>
+                                                                <td> 15:30 </td>
+                                                                <td> - </td>
+                                                                <td> Successful </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td> 4. Topic 4 </td>
+                                                                <td> 15:30 </td>
+                                                                <td> 13:80 </td>
+                                                                <td> Successful </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td> 5. Topic 5 </td>
+                                                                <td> 15:30 </td>
+                                                                <td> - </td>
+                                                                <td> Waiting </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td> 6. Topic 6 </td>
+                                                                <td> 15:30 </td>
+                                                                <td> 13:80 </td>
+                                                                <td> - </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end course content container -->
+                            <!-- start related course item -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="mu-related-item">
+                                        <h3>Related Courses</h3>
+                                        <div class="mu-related-item-area">
+                                            <div id="mu-related-item-slide">
+                                                @Html.Action("Detail", "Course", new {guid = Model.Key})
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end start related course item -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>

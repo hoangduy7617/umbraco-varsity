@@ -1,0 +1,35 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+
+
+@{
+	var selection = Umbraco.ContentAtRoot().FirstOrDefault()
+    .Children();
+    var allCategory = Umbraco.TagQuery.GetAllTags("CourseCategory");
+    
+}
+<div id="navbar" class="navbar-collapse collapse">
+    <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
+        
+    	@foreach (var item in selection)
+    	{
+    	    string active = item.Url == Model.Url ? "active" : "";
+            var itemChildren = item.Children;
+            
+    		if(item.Url == "/courses/"){
+    		    <li class="@active dropdown">
+                  <a href="@item.Url" class="dropdown-toggle" data-toggle="dropdown">@item.Name <span class="fa fa-angle-down"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                      <li><a href="/course-listing">All</a></li>  
+                      @foreach (var item2 in allCategory){
+                        <li><a href="/course-listing?category=@item2.Text">@item2.Text</a></li>                
+                      }
+                  </ul>
+                </li>
+		   }
+		   else{
+    		    <li class="@active"><a href="@item.Url">@item.Name</a></li>  
+    		}
+    	}
+    </ul>                     
+</div>
+
