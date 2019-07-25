@@ -8,7 +8,7 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "34e3ffed297d69dc")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "347050dad648ce2c")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -46,7 +46,7 @@ namespace Umbraco.Web.PublishedModels
 	{
 		/// <summary>Description</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		string Description { get; }
+		IHtmlString Description { get; }
 
 		/// <summary>Title</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
@@ -83,11 +83,11 @@ namespace Umbraco.Web.PublishedModels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("description")]
-		public string Description => GetDescription(this);
+		public IHtmlString Description => GetDescription(this);
 
 		/// <summary>Static getter for Description</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static string GetDescription(IPages that) => that.Value<string>("description");
+		public static IHtmlString GetDescription(IPages that) => that.Value<IHtmlString>("description");
 
 		///<summary>
 		/// Title
@@ -131,7 +131,7 @@ namespace Umbraco.Web.PublishedModels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("description")]
-		public string Description => Pages.GetDescription(this);
+		public IHtmlString Description => Pages.GetDescription(this);
 
 		///<summary>
 		/// Title
@@ -171,7 +171,7 @@ namespace Umbraco.Web.PublishedModels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("description")]
-		public string Description => Pages.GetDescription(this);
+		public IHtmlString Description => Pages.GetDescription(this);
 
 		///<summary>
 		/// Title
@@ -274,7 +274,7 @@ namespace Umbraco.Web.PublishedModels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("description")]
-		public string Description => Pages.GetDescription(this);
+		public IHtmlString Description => Pages.GetDescription(this);
 
 		///<summary>
 		/// Title
@@ -314,7 +314,7 @@ namespace Umbraco.Web.PublishedModels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("description")]
-		public string Description => Pages.GetDescription(this);
+		public IHtmlString Description => Pages.GetDescription(this);
 
 		///<summary>
 		/// Title
@@ -401,7 +401,7 @@ namespace Umbraco.Web.PublishedModels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("description")]
-		public string Description => Pages.GetDescription(this);
+		public IHtmlString Description => Pages.GetDescription(this);
 
 		///<summary>
 		/// Title

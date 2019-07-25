@@ -8,6 +8,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Umbraco(1)", ".", "{C5B06DDC-8558-4A32-AA32-A164D0CF5583}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		ProjectReferences = "{7a9ae5f9-3623-44ef-9deb-d704503a1b63}|UmbracoMVC.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_20678"
 		Debug.AspNetCompiler.PhysicalPath = "..\Umbraco\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_20678\"

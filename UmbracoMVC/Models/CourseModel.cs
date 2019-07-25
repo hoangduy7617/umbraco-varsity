@@ -9,7 +9,7 @@ namespace UmbracoMVC.Models
     {        
         public string Key { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
+        public HtmlString Description { get; set; }
         public string ShortDescription { get; set; }
         public string Url { get; set; }
         public string Image { get; set; }
